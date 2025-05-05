@@ -3,33 +3,56 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    <title>@yield('title', 'Juntas Flexibles BSH')</title> <!-- Título dinámico -->
 
-    <!-- Descripción meta dinámica -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>@yield('title', 'Juntas Flexibles BSH')</title>
     <meta name="description" content="@yield('description', 'Descripción por defecto')">
 
+    <!-- Optimized Google Fonts: se usa solo la versión moderna con preload y media="print" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    </noscript>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <!-- AlpineJS se carga de forma deferida -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-
+    <!-- Vite assets: CSS y JS minificados en producción -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Google Tag Manager: carga asíncrona para evitar bloqueos -->
+    <script>
+      (function(w,d,s,l,i){
+          w[l]=w[l]||[];
+          w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+          var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),
+              dl=l!='dataLayer'?'&l='+l:'';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          f.parentNode.insertBefore(j,f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MGF7LRG');
+    </script>
 
     <link rel="icon" href="{{ asset('img/favicon-1.png') }}" type="image/x-icon" />
 
-    @yield('structured-data') <!-- Sección para datos estructurados -->
+    @yield('structured-data')
 </head>
 <body>
-  
-    <!-- Sección de contacto -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGF7LRG" height="0" width="0" style="display:none;visibility:hidden" loading="lazy"></iframe>
+    </noscript>
+
+    <!-- Sección de contacto superior (información crítica, se carga de forma inmediata) -->
     <section class="hidden md:block bg-gray-200 transition duration-300 ease-in-out border border-transparent rounded">
         <div class="max-w-7xl mx-auto relative flex">
             <!-- Email -->
             <div class="w-1/5 min-h-0 flex">
-                <div class="p-4 flex w-auto">
+                <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
                         <i class="fa-solid fa-envelope text-gray-400"></i>
                         <div class="pl-1">
@@ -40,7 +63,7 @@
             </div>
             <!-- Teléfono 1 -->
             <div class="w-1/6">
-                <div class="p-4 flex w-auto">
+                <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
                         <i class="fa-solid fa-phone text-gray-400"></i>
                         <div class="pl-1">
@@ -51,7 +74,7 @@
             </div>
             <!-- Teléfono 2 -->
             <div class="w-1/6">
-                <div class="p-4 flex w-auto">
+                <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
                         <i class="fa-solid fa-phone text-gray-400"></i>
                         <div class="pl-1">
@@ -62,7 +85,7 @@
             </div>
             <!-- WhatsApp 1 -->
             <div class="w-1/6">
-                <div class="p-4 flex w-auto">
+                <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
                         <i class="fa-brands fa-whatsapp text-gray-400"></i>
                         <div class="pl-1">
@@ -73,7 +96,7 @@
             </div>
             <!-- WhatsApp 2 -->
             <div class="w-1/6">
-                <div class="p-4 flex w-auto">
+                <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
                         <i class="fa-brands fa-whatsapp text-gray-400"></i>
                         <div class="pl-1">
@@ -84,14 +107,12 @@
             </div>
             <!-- Redes Sociales -->
             <div class="w-1/6">
-                <div class="p-4 flex w-auto">
+                <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
-                        <!-- Ícono de Facebook -->
                         <a href="https://www.facebook.com/Bombas-Sellos-y-Hules-Industriales-SA-de-CV-116434456400428" target="_blank" class="inline-flex items-center justify-center text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out no-underline ml-4">
                             <span class="sr-only">Facebook</span>
                             <i class="fa-brands fa-facebook text-[25px]"></i>
                         </a>
-                        <!-- Ícono de LinkedIn -->
                         <a href="https://www.linkedin.com/company/bombas-sellos-y-hules-industriales-bsh" target="_blank" class="inline-flex items-center justify-center text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out no-underline ml-4">
                             <span class="sr-only">LinkedIn</span>
                             <i class="fa-brands fa-linkedin text-[25px]"></i>
@@ -99,7 +120,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </section>
 
@@ -107,7 +127,7 @@
     <section class="transition-all bg-white" data-id="ababfc0" data-element_type="section" data-settings='{"background_background":"classic"}'>
         <div class="max-w-7xl mx-auto px-4 md:px-0 py-4">
             <div class="flex flex-col md:flex-row items-center">
-                <!-- Logo -->
+                <!-- Logo (contenido crítico, no se aplica lazy-loading) -->
                 <div class="w-full md:w-1/5 mb-4 md:mb-0 md:mr-4">
                     <a href="{{ url('/') }}">
                         <img src="{{ asset('img/log-bsh-final-01.png') }}" 
@@ -128,34 +148,28 @@
                     </button>
                     <!-- Enlaces del menú -->
                     <div id="menu-items" class="font-roboto font-medium bg-gray-900 w-full items-center flex flex-col md:ml-2 hidden md:block md:bg-white">
-                        <a href="{{ url('/') }}" class="text-[#164ec9] font-roboto text-xs px-2 py-2 hover:text-blue-700">INICIO</a>
-                        <a href="{{ url('#materiales') }}" class="text-[#164ec9] font-roboto text-xs px-2 py-2 hover:text-blue-700">MATERIALES DE LAS JUNTAS</a>
-                        <a href="{{ url('selecciona-juntas-de-expansion') }}" class="text-[#164ec9] font-roboto text-xs px-2 py-2 hover:text-blue-700">HERRAMIENTA DE SELECCIÓN</a>
-                        <a href="{{ url('#movimientos') }}" class="text-[#164ec9] font-roboto text-xs px-2 py-2 hover:text-blue-700">MOVIMIENTOS</a>
-                        <a href="{{ url('estilos-juntas-de-expansion-bsh') }}" class="text-[#164ec9] font-roboto text-xs px-2 py-2 hover:text-blue-700">ESTILOS</a>
-                        <a href="{{ url('https://www.bombasellos.com.mx/somos-bsh/') }}" class="text-[#164ec9] font-roboto text-xs px-2 py-2 hover:text-blue-700">NOSOTROS</a>
-                        <a href="{{ url('https://www.bombasellos.com.mx/contacto/') }}" class="text-[#164ec9] font-roboto text-xs px-2 py-2 hover:text-blue-700">CONTACTO</a>
-                        <a href="{{ url('blog') }}" class="text-[#164ec9] font-roboto text-xs px-2 py-2 hover:text-blue-700">BLOG</a>
-                    <!-- Botón "COTIZAR AHORA" integrado al menú -->
-                    <a href="{{ url('contact') }}" class="text-white bg-primaryRed rounded-[22px] px-4 py-3 hover:bg-primaryHover m-2 text-xs">
-                        COTIZAR AHORA
-                    </a>
+                        <a href="{{ url('/') }}" class="text-[#164ec9] text-xs px-2 py-2 hover:text-blue-700">INICIO</a>
+                        <a href="{{ url('/') }}#materiales" class="text-[#164ec9] text-xs px-2 py-2 hover:text-blue-700">MATERIALES DE LAS JUNTAS</a>
+                        <a href="{{ url('selecciona-juntas-de-expansion') }}" class="text-[#164ec9] text-xs px-2 py-2 hover:text-blue-700">HERRAMIENTA DE SELECCIÓN</a>
+                        <a href="{{ url('/') }}#movimientos" class="text-[#164ec9] text-xs px-2 py-2 hover:text-blue-700">MOVIMIENTOS</a>
+                        <a href="{{ url('estilos-juntas-de-expansion-bsh') }}" class="text-[#164ec9] text-xs px-2 py-2 hover:text-blue-700">ESTILOS</a>
+                        <a href="{{ url('https://www.bombasellos.com.mx/somos-bsh/') }}" class="text-[#164ec9] text-xs px-2 py-2 hover:text-blue-700">NOSOTROS</a>
+                        <a href="{{ url('https://www.bombasellos.com.mx/contacto/') }}" class="text-[#164ec9] text-xs px-2 py-2 hover:text-blue-700">CONTACTO</a>
+                        <a href="{{ url('https://blog.juntasflexibles.com/') }}" class="text-[#164ec9] text-xs px-2 py-2 hover:text-blue-700">BLOG</a>
+                        <!-- Botón "COTIZAR AHORA" -->
+                        <a href="{{ url('contact') }}" class="text-white bg-primaryRed rounded-[22px] px-4 py-3 hover:bg-primaryHover m-2 text-xs">
+                            COTIZAR AHORA
+                        </a>
                     </div>
-
-                      
-
-
                 </div>
             </div>
         </div>
     </section>
 
-   
-
+    <!-- Contenido principal -->
     <h1>@yield('titulo')</h1>
     <hr>
     @yield('contenido')
-
 
     <footer>
         <section class="bg-blue-900 font-roboto" data-id="a4a4df0" data-element_type="section">
@@ -164,14 +178,14 @@
                 <div class="w-full md:w-1/2 lg:w-1/3 p-4">
                     <div>
                         <a href="{{ url('/') }}" class="block">
-                            <img src="{{ asset('img/logo-bsh-white.png.webp')}}" alt="Bombas centrifugas, Sellos hidráulicos, hules industriales – BSH" width="640" height="480" class="w-64 h-auto p-4">
+                            <img src="{{ asset('img/logo-bsh-white.png.webp') }}" alt="Bombas centrifugas, Sellos hidráulicos, hules industriales – BSH" width="640" height="480" class="w-64 h-auto p-4" loading="lazy">
                         </a>
                     </div>
-                    
                     <div class="h-4"></div>
                     <div class="p-12">
-                        <p class="text-white text-sm leading-[1.8] text-justify">Juntas de Expansión de Hules 
-                            convenciones y especiales para cualquier industria. Fabricamos sobre especificación o diseño.</p>
+                        <p class="text-white text-sm leading-[1.8] text-justify">
+                            Juntas de Expansión de Hules convencionales y especiales para cualquier industria. Fabricamos sobre especificación o diseño.
+                        </p>
                     </div>
                     <div class="h-4"></div>
                     <div class="p-4">
@@ -192,13 +206,11 @@
                     <div class="p-4">
                         <div class="text-2xl font-semibold text-white p-4">MAPA DEL SITIO</div>
                     </div>
-
                     <div class="p-4">
-                        <button id="toggleMenu" type="button" class="block md:hidden text-white" aria-label="Toggle navigation menu">
-                            <i class="fas fa-bars"></i> <!-- Icono de menú -->
+                        <button id="toggle-sitemap" type="button" class="block md:hidden text-white" aria-label="Toggle sitemap">
+                            <i class="fas fa-bars"></i>
                         </button>
-                        
-                        <div id="menuItems" class="hidden md:block">
+                        <div id="sitemap-items" class="hidden md:block">
                             <ul class="text-white">
                                 <li><a href="{{ url('/') }}" class="text-sm">INICIO</a></li>
                                 <li><a href="{{ url('#materiales') }}" class="text-sm">MATERIALES DE LAS JUNTAS</a></li>
@@ -211,9 +223,10 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="p-4">
-                        <p><a href="{{ url('aviso-de-privacidad') }}" class="text-sm text-white">AVISO DE PRIVACIDAD</a></p>
+                        <p>
+                            <a href="{{ url('aviso-de-privacidad') }}" class="text-sm text-white">AVISO DE PRIVACIDAD</a>
+                        </p>
                     </div>
                 </div>
                 <!-- Tercera columna del footer -->
@@ -231,26 +244,27 @@
                             <span>(22)2227-3866</span><br>
                             <span>(83)3246-2205</span><br>
                             <span>(83)3239-5885</span><br>
-                            <span><a href="mailto:bsh@bombasellos.com.mx" class="">-Correo electrónico: bsh@bombasellos.com.mx</a></span>
+                            <span>
+                                <a href="mailto:bsh@bombasellos.com.mx">-Correo electrónico: bsh@bombasellos.com.mx</a>
+                            </span>
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!-- Barra de derechos -->
         <div class="border-t border-gray-500"></div>
-
         <!-- Derechos de autor -->
         <section class="bg-blue-900 py-8">
             <div class="container mx-auto flex flex-wrap">
-                <!-- Primera mitad -->
                 <div class="w-full md:w-1/2 px-4">
                     <div class="text-gray-700">
-                        <p class="text-base text-gray-400">&copy; {{ date('Y') }} - Todos los derechos reservados. Bombas Sellos y Hules Industriales S.A. de C.V.</p>
+                        <p class="text-base text-gray-400">
+                            &copy; {{ date('Y') }} - Todos los derechos reservados. Bombas Sellos y Hules Industriales S.A. de C.V.
+                        </p>
                     </div>
                 </div>
-                <!-- Segunda mitad -->
                 <div class="w-full md:w-1/2 px-4">
                     <div class="text-gray-700 text-right">
                         <p class="text-base text-white">LUN – VIE: 9.00 – 18.00&nbsp; SAB/SUN: CLOSED</p>
@@ -258,6 +272,8 @@
                 </div>
             </div>
         </section>
+        
+        @include('components.click-to-chat')
     </footer>
 </body>
 </html>

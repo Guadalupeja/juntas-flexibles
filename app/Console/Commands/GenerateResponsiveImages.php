@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
-
+use Illuminate\Support\Collection;
 
 class GenerateResponsiveImages extends Command
 {
@@ -16,6 +16,7 @@ class GenerateResponsiveImages extends Command
     {
         // Directorio donde están tus imágenes originales
         $originalImagesPath = public_path('img');
+
         // Directorio donde guardarás las imágenes procesadas
         $processedImagesPath = public_path('img/procesadas');
 
@@ -26,13 +27,17 @@ class GenerateResponsiveImages extends Command
 
         // Tamaños que deseas generar
         $sizes = [
-            'small' => 480,
+            'small'  => 480,
             'medium' => 800,
-            'large' => 1200,
+            'large'  => 1200,
         ];
 
-        // Obtener todas las imágenes jpg del directorio original
-        $images = File::files($originalImagesPath);
+        // Obtener las imágenes con extensiones soportadas
+        $images = collect(File::files($originalImagesPath))->filter(function ($file) {
+            $ext = strtolower($file->getExtension());
+            // Filtra solo estas extensiones que Intervention Image (GD) pueda manejar
+            return in_array($ext, ['jpg', 'jpeg', 'png', 'webp']);
+        });
 
         foreach ($images as $image) {
             $filename = pathinfo($image->getFilename(), PATHINFO_FILENAME);
@@ -45,11 +50,12 @@ class GenerateResponsiveImages extends Command
                         $constraint->upsize();
                     });
 
-                $jpgPath = $processedImagesPath . "/{$filename}-{$sizeName}.jpg";
+                // Guarda la versión JPG
+                $jpgPath = "{$processedImagesPath}/{$filename}-{$sizeName}.jpg";
                 $img->save($jpgPath, 80); // Calidad 80 para jpg
 
-                // Guardar en webp
-                $webpPath = $processedImagesPath . "/{$filename}-{$sizeName}.webp";
+                // Guarda también en formato WEBP
+                $webpPath = "{$processedImagesPath}/{$filename}-{$sizeName}.webp";
                 $img->encode('webp', 80)->save($webpPath);
             }
         }
@@ -57,4 +63,5 @@ class GenerateResponsiveImages extends Command
         $this->info('Imágenes procesadas correctamente.');
     }
 }
+
 
