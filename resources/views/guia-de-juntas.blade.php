@@ -149,23 +149,51 @@ variedad de aplicaciones industriales y de construcción, medidas comunes e impo
 
     <!-- Formulario HubSpot -->
     <div>
-      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
-      <script>
-        window.onload = function() {
-          var script = document.createElement('script');
-          script.src = '//js.hsforms.net/forms/shell.js';
-          script.charset = 'utf-8';
-          script.type = 'text/javascript';
-          script.onload = function() {
-            hbspt.forms.create({
-              region: "na1",
-              portalId: "7547674",
-              formId: "e391047b-0ba7-411a-85bc-4c528141e149"
-            });
-          };
-          document.body.appendChild(script);
-        };
-      </script>
+           <!-- Carga diferida de HubSpot -->
+           <div id="hubspot-form"></div>   {{-- ← el form se inyectará aquí --}}
+           {{-- HubSpot: carga solo cuando el visitante se acerca al formulario --}}
+           <link rel="preconnect" href="https://js.hsforms.net">
+           <link rel="dns-prefetch" href="https://js.hsforms.net">
+           
+           <script>
+             document.addEventListener('DOMContentLoaded', () => {
+               const target = document.getElementById('hubspot-form');
+           
+               function loadHubSpot() {
+                 if (window.hsFormLoaded) return;         // evita doble carga
+                 window.hsFormLoaded = true;
+           
+                 const s   = document.createElement('script');
+                 s.src     = 'https://js.hsforms.net/forms/v2.js'; // 30-40 % más ligero que shell.js
+                 s.async   = true;
+                 s.onload  = () => {
+                   if (window.hbspt) {
+                     hbspt.forms.create({
+                       region   : 'na1',
+                       portalId : '7547674',
+                       formId   : 'e391047b-0ba7-411a-85bc-4c528141e149',
+                       target   : '#hubspot-form'
+                     });
+                   }
+                 };
+                 document.body.appendChild(s);
+               }
+           
+               /* ① Carga cuando la sección CONTACTO entra a viewport (≈ 200 px antes) */
+               if ('IntersectionObserver' in window) {
+                 const io = new IntersectionObserver((entries, observer) => {
+                   if (entries[0].isIntersecting) {
+                     loadHubSpot();
+                     observer.disconnect();
+                   }
+                 }, { rootMargin: '0px 0px 200px 0px' });
+                 io.observe(target);
+               } else {
+                 /* ② Respaldo: si el navegador no soporta IO, espera 5 s tras load */
+                 window.addEventListener('load', () => setTimeout(loadHubSpot, 5000));
+               }
+             });
+           </script>
     </div>
   </div>
 </section>

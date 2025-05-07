@@ -24,18 +24,47 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Google Tag Manager: carga asíncrona para evitar bloqueos -->
-    <script>
-      (function(w,d,s,l,i){
-          w[l]=w[l]||[];
-          w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-          var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),
-              dl=l!='dataLayer'?'&l='+l:'';
-          j.async = true;
-          j.src = 'https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          f.parentNode.insertBefore(j,f);
-      })(window, document, 'script', 'dataLayer', 'GTM-MGF7LRG');
-    </script>
+    <!-- GTM – versión optimizada -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<script>
+  /* ① Stub ligero: deja dataLayer listo sin traer gtm.js todavía */
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'gtm.start': Date.now(),
+    event: 'gtm.init'
+  });
+
+  /* ② Función que cargará gtm.js cuando le llamemos */
+  function loadGTM () {
+    if (window.gtmLoaded) return;           // evita doble inyección
+    window.gtmLoaded = true;
+
+    const s   = document.createElement('script');
+    s.src     = 'https://www.googletagmanager.com/gtm.js?id=GTM-MGF7LRG&l=dataLayer';
+    s.async   = true;
+    document.head.appendChild(s);
+  }
+
+  /* ③ Disparador: después de la primera pintura (FCP) + 500 ms */
+  try {
+    const obs = new PerformanceObserver((list) => {
+      setTimeout(loadGTM, 2500);             // pequeño margen
+      obs.disconnect();
+    });
+    obs.observe({ type: 'paint', buffered: true });
+  } catch (e) {
+    /* Navegador antiguo ⇒ cargamos tras el evento load */
+    window.addEventListener('load', () => setTimeout(loadGTM, 1000));
+  }
+
+  /* ④ Respaldo extra por interacción del usuario (opcional) */
+  ['scroll','pointerdown','keydown'].forEach(evt =>
+    addEventListener(evt, loadGTM, { once:true, passive:true })
+  );
+</script>
+
 
     <link rel="icon" href="{{ asset('img/favicon-1.png') }}" type="image/x-icon" />
 
@@ -43,9 +72,13 @@
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGF7LRG" height="0" width="0" style="display:none;visibility:hidden" loading="lazy"></iframe>
-    </noscript>
+   <!-- GTM (noscript) – respaldo sin JS -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGF7LRG"
+            height="0" width="0"
+            style="display:none;visibility:hidden" loading="lazy"></iframe>
+  </noscript>
+  
 
     <!-- Sección de contacto superior (información crítica, se carga de forma inmediata) -->
     <section class="hidden md:block bg-gray-200 transition duration-300 ease-in-out border border-transparent rounded">

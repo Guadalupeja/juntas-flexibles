@@ -739,29 +739,7 @@ Fabricación Express Juntas Bridadas.Todos los materiales y normas')
          <h2 class="encabezado text-white m-5">¿Necesitas más información sobre las juntas de expansión? <br>
           Por favor llena el siguiente formulario y en breve un experto se comunicará contigo:</h2>
   <div class="p-5">
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
-        <script>
-          window.onload = function() {
-            var script = document.createElement('script');
-            script.src = '//js.hsforms.net/forms/shell.js';
-            script.charset = 'utf-8';
-            script.type = 'text/javascript';
-            script.onload = function() {
-              hbspt.forms.create({
-                region: "na1",
-                portalId: "7547674",
-                formId: "e391047b-0ba7-411a-85bc-4c528141e149"
-              });
-            };
-            document.body.appendChild(script);
-          };
-
-
-
-
-
-
-        </script>
+    http://127.0.0.1:8000/junta-flexible-bsh-1120
         </div>
 
 </div>

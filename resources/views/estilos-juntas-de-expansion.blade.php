@@ -94,24 +94,24 @@
                         <source 
                             type="image/webp" 
                             srcset="
-                                {{ asset('img/procesadas/junta-de-expansión-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-small.webp') }} 480w,
-                                {{ asset('img/procesadas/junta-de-expansión-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-medium.webp') }} 800w,
-                                {{ asset('img/procesadas/junta-de-expansión-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-large.webp') }} 1200w"
+                                {{ asset('img/procesadas/junta-de-expansion-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-small.webp') }} 480w,
+                                {{ asset('img/procesadas/junta-de-expansion-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-medium.webp') }} 800w,
+                                {{ asset('img/procesadas/junta-de-expansion-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-large.webp') }} 1200w"
                             sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
                         
                         <!-- Fuente de respaldo para navegadores que no soportan WebP -->
                         <source 
                             type="image/jpeg" 
                             srcset="
-                                {{ asset('img/procesadas/junta-de-expansión-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-small.jpg') }} 480w,
-                                {{ asset('img/procesadas/junta-de-expansión-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-medium.jpg') }} 800w,
-                                {{ asset('img/procesadas/junta-de-expansión-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-large.jpg') }} 1200w"
+                                {{ asset('img/procesadas/junta-de-expansion-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-small.jpg') }} 480w,
+                                {{ asset('img/procesadas/junta-de-expansion-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-medium.jpg') }} 800w,
+                                {{ asset('img/procesadas/junta-de-expansion-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-large.jpg') }} 1200w"
                             sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
                         
                         <!-- Etiqueta img como último recurso -->
                         <img 
                           id="imagen_destacada_img"
-                            src="{{ asset('img/procesadas/junta-de-expansión-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-large.jpg') }}" 
+                            src="{{ asset('img/procesadas/junta-de-expansion-tipo-carrete-de-arco-sencillo-con-bridas-de-hule-large.jpg') }}" 
                             alt="Imagen Destacada" 
                             class="mx-auto w-[370px] transition-transform duration-300 ease-in-out hover:scale-110">
                     </picture>
@@ -186,24 +186,24 @@
                         <source 
                             type="image/webp" 
                             srcset="
-                                {{ asset('img/procesadas/junta-de-expansión-de-doble-arco-con-bridas-de-hule-1-1-small.webp') }} 480w,
-                                {{ asset('img/procesadas/junta-de-expansión-de-doble-arco-con-bridas-de-hule-1-1-medium.webp') }} 800w,
-                                {{ asset('img/procesadas/junta-de-expansión-de-doble-arco-con-bridas-de-hule-1-1-large.webp') }} 1200w"
+                                {{ asset('img/procesadas/junta-de-expansion-de-doble-arco-con-bridas-de-hule-1-1-small.webp') }} 480w,
+                                {{ asset('img/procesadas/junta-de-expansion-de-doble-arco-con-bridas-de-hule-1-1-medium.webp') }} 800w,
+                                {{ asset('img/procesadas/junta-de-expansion-de-doble-arco-con-bridas-de-hule-1-1-large.webp') }} 1200w"
                             sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
                         
                         <!-- Fuente de respaldo para navegadores que no soportan WebP -->
                         <source 
                             type="image/jpeg" 
                             srcset="
-                                {{ asset('img/procesadas/junta-de-expansión-de-doble-arco-con-bridas-de-hule-1-1-small.jpg') }} 480w,
-                                {{ asset('img/procesadas/junta-de-expansión-de-doble-arco-con-bridas-de-hule-1-1-medium.jpg') }} 800w,
-                                {{ asset('img/procesadas/junta-de-expansión-de-doble-arco-con-bridas-de-hule-1-1-large.jpg') }} 1200w"
+                                {{ asset('img/procesadas/junta-de-expansion-de-doble-arco-con-bridas-de-hule-1-1-small.jpg') }} 480w,
+                                {{ asset('img/procesadas/junta-de-expansion-de-doble-arco-con-bridas-de-hule-1-1-medium.jpg') }} 800w,
+                                {{ asset('img/procesadas/junta-de-expansion-de-doble-arco-con-bridas-de-hule-1-1-large.jpg') }} 1200w"
                             sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
                         
                         <!-- Etiqueta img como último recurso -->
                         <img 
                           id="imagen_destacada_img"
-                            src="{{ asset('img/procesadas/junta-de-expansión-de-doble-arco-con-bridas-de-hule-1-1-large.jpg') }}" 
+                            src="{{ asset('img/procesadas/junta-de-expansion-de-doble-arco-con-bridas-de-hule-1-1-large.jpg') }}" 
                             alt="Imagen Junta de expansión 1120" 
                             class="mx-auto w-[370px] transition-transform duration-300 ease-in-out hover:scale-110">
                     </picture>
@@ -412,24 +412,24 @@
               <source 
                   type="image/webp" 
                   srcset="
-                      {{ asset('img/procesadas/junta-de-expansión-cónica-con-bridas-metálicas-1-1-small.webp') }} 480w,
-                      {{ asset('img/procesadas/junta-de-expansión-cónica-con-bridas-metálicas-1-1-medium.webp') }} 800w,
-                      {{ asset('img/procesadas/junta-de-expansión-cónica-con-bridas-metálicas-1-1-large.webp') }} 1200w"
+                      {{ asset('img/procesadas/junta-de-expansion-conica-con-bridas-metalicas-1-1-small.webp') }} 480w,
+                      {{ asset('img/procesadas/junta-de-expansion-conica-con-bridas-metalicas-1-1-medium.webp') }} 800w,
+                      {{ asset('img/procesadas/junta-de-expansion-conica-con-bridas-metalicas-1-1-large.webp') }} 1200w"
                   sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
               
               <!-- Fuente de respaldo para navegadores que no soportan WebP -->
               <source 
                   type="image/jpeg" 
                   srcset="
-                      {{ asset('img/procesadas/junta-de-expansión-cónica-con-bridas-metálicas-1-1-small.jpg') }} 480w,
-                      {{ asset('img/procesadas/junta-de-expansión-cónica-con-bridas-metálicas-1-1-medium.jpg') }} 800w,
-                      {{ asset('img/procesadas/junta-de-expansión-cónica-con-bridas-metálicas-1-1-large.jpg') }} 1200w"
+                      {{ asset('img/procesadas/junta-de-expansion-conica-con-bridas-metalicas-1-1-small.jpg') }} 480w,
+                      {{ asset('img/procesadas/junta-de-expansion-conica-con-bridas-metalicas-1-1-medium.jpg') }} 800w,
+                      {{ asset('img/procesadas/junta-de-expansion-conica-con-bridas-metalicas-1-1-large.jpg') }} 1200w"
                   sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
               
               <!-- Etiqueta img como último recurso -->
               <img 
                 id="imagen_destacada_img"
-                  src="{{ asset('img/procesadas/junta-de-expansión-cónica-con-bridas-metálicas-1-1-large.jpg') }}" 
+                  src="{{ asset('img/procesadas/junta-de-expansion-conica-con-bridas-metalicas-1-1-large.jpg') }}" 
                   alt="Imagen Junta de expansión 111C" 
                   class="mx-auto w-[370px] transition-transform duration-300 ease-in-out hover:scale-110">
           </picture>
@@ -644,23 +644,51 @@
          <h2 class="encabezado text-white m-5">¿Necesitas más información sobre las juntas de expansión? <br>
           Por favor llena el siguiente formulario y en breve un experto se comunicará contigo:</h2>
   <div class="p-5">
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
-        <script>
-          window.onload = function() {
-            var script = document.createElement('script');
-            script.src = '//js.hsforms.net/forms/shell.js';
-            script.charset = 'utf-8';
-            script.type = 'text/javascript';
-            script.onload = function() {
-              hbspt.forms.create({
-                region: "na1",
-                portalId: "7547674",
-                formId: "e391047b-0ba7-411a-85bc-4c528141e149"
-              });
-            };
-            document.body.appendChild(script);
-          };
-        </script>
+             <!-- Carga diferida de HubSpot -->
+             <div id="hubspot-form"></div>   {{-- ← el form se inyectará aquí --}}
+             {{-- HubSpot: carga solo cuando el visitante se acerca al formulario --}}
+             <link rel="preconnect" href="https://js.hsforms.net">
+             <link rel="dns-prefetch" href="https://js.hsforms.net">
+             
+             <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                 const target = document.getElementById('hubspot-form');
+             
+                 function loadHubSpot() {
+                   if (window.hsFormLoaded) return;         // evita doble carga
+                   window.hsFormLoaded = true;
+             
+                   const s   = document.createElement('script');
+                   s.src     = 'https://js.hsforms.net/forms/v2.js'; // 30-40 % más ligero que shell.js
+                   s.async   = true;
+                   s.onload  = () => {
+                     if (window.hbspt) {
+                       hbspt.forms.create({
+                         region   : 'na1',
+                         portalId : '7547674',
+                         formId   : 'e391047b-0ba7-411a-85bc-4c528141e149',
+                         target   : '#hubspot-form'
+                       });
+                     }
+                   };
+                   document.body.appendChild(s);
+                 }
+             
+                 /* ① Carga cuando la sección CONTACTO entra a viewport (≈ 200 px antes) */
+                 if ('IntersectionObserver' in window) {
+                   const io = new IntersectionObserver((entries, observer) => {
+                     if (entries[0].isIntersecting) {
+                       loadHubSpot();
+                       observer.disconnect();
+                     }
+                   }, { rootMargin: '0px 0px 200px 0px' });
+                   io.observe(target);
+                 } else {
+                   /* ② Respaldo: si el navegador no soporta IO, espera 5 s tras load */
+                   window.addEventListener('load', () => setTimeout(loadHubSpot, 5000));
+                 }
+               });
+             </script>
         </div>
 
 </div>
