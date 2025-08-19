@@ -8,6 +8,22 @@
 
     <title>@yield('title', 'Juntas Flexibles BSH')</title>
     <meta name="description" content="@yield('description', 'Descripción por defecto')">
+    
+<!-- Preload del LCP: solo AVIF (si no hay soporte, el navegador lo ignora y usará WebP/JPG del <picture>) -->
+<link
+  rel="preload"
+  as="image"
+  href="/img/procesadas/Junta-de-expansion-bsh-mexico-large.avif"
+  type="image/avif"
+  imagesrcset="
+    /img/procesadas/Junta-de-expansion-bsh-mexico-small.avif 480w,
+    /img/procesadas/Junta-de-expansion-bsh-mexico-medium.avif 800w,
+    /img/procesadas/Junta-de-expansion-bsh-mexico-large.avif 1200w
+  "
+  imagesizes="100vw"
+  fetchpriority="high"
+/>
+
 
     <!-- Optimized Google Fonts: se usa solo la versión moderna con preload y media="print" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,47 +39,18 @@
     <!-- Vite assets: CSS y JS minificados en producción -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Google Tag Manager: carga asíncrona para evitar bloqueos -->
-    <!-- GTM – versión optimizada -->
+    <!-- Google Tag Manager: carga normal para evitar bloqueos -->
+<!-- Sustituye tu loader diferido por esto en <head> -->
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
 <script>
-  /* ① Stub ligero: deja dataLayer listo sin traer gtm.js todavía */
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'gtm.start': Date.now(),
-    event: 'gtm.init'
-  });
-
-  /* ② Función que cargará gtm.js cuando le llamemos */
-  function loadGTM () {
-    if (window.gtmLoaded) return;           // evita doble inyección
-    window.gtmLoaded = true;
-
-    const s   = document.createElement('script');
-    s.src     = 'https://www.googletagmanager.com/gtm.js?id=GTM-MGF7LRG&l=dataLayer';
-    s.async   = true;
-    document.head.appendChild(s);
-  }
-
-  /* ③ Disparador: después de la primera pintura (FCP) + 500 ms */
-  try {
-    const obs = new PerformanceObserver((list) => {
-      setTimeout(loadGTM, 2500);             // pequeño margen
-      obs.disconnect();
-    });
-    obs.observe({ type: 'paint', buffered: true });
-  } catch (e) {
-    /* Navegador antiguo ⇒ cargamos tras el evento load */
-    window.addEventListener('load', () => setTimeout(loadGTM, 1000));
-  }
-
-  /* ④ Respaldo extra por interacción del usuario (opcional) */
-  ['scroll','pointerdown','keydown'].forEach(evt =>
-    addEventListener(evt, loadGTM, { once:true, passive:true })
-  );
+  window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
 </script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MGF7LRG"></script>
+
+
+
 
 
     <link rel="icon" href="{{ asset('img/favicon-1.png') }}" type="image/x-icon" />
@@ -262,27 +249,43 @@
                         </p>
                     </div>
                 </div>
-                <!-- Tercera columna del footer -->
-                <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                    <div class="p-4">
-                        <div class="text-xl font-semibold text-white p-4">CONTACTO</div>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-white">
-                            <span>-Nombre: Bombas Sellos y Hules Industriales SA de CV.</span><br>
-                            <span>-Abreviado: BSH SA de CV.</span><br>
-                            <span>-Dirección: Avenida 125 Oriente #226, Guadalupe Hidalgo. Puebla. C.P. 72494.</span><br>
-                            <span>-Teléfonos:</span><br>
-                            <span>(55)5752-1715</span><br>
-                            <span>(22)2227-3866</span><br>
-                            <span>(83)3246-2205</span><br>
-                            <span>(83)3239-5885</span><br>
-                            <span>
-                                <a href="mailto:bsh@bombasellos.com.mx">-Correo electrónico: bsh@bombasellos.com.mx</a>
-                            </span>
-                        </p>
-                    </div>
-                </div>
+<!-- Tercera columna del footer -->
+<div class="w-full md:w-1/2 lg:w-1/3 p-4">
+    <div class="p-4 text-white">
+        <h3 class="text-2xl font-bold mb-4">CONTACTO</h3>
+
+        <!-- Mapa -->
+        <div class="rounded-xl overflow-hidden shadow-lg mb-6">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.0165043164975!2d-98.23402809999999!3d18.974878499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfb91e693c3dc1%3A0xaeeb79408ef2534b!2sBSH%20%E2%80%93%20Juntas%20de%20Expansi%C3%B3n!5e0!3m2!1ses!2smx!4v1752531827657!5m2!1ses!2smx" 
+                width="100%" 
+                height="250" 
+                class="w-full border-0"
+                allowfullscreen 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <!-- Datos de contacto -->
+        <div class="text-sm leading-relaxed space-y-2">
+            <p><strong>Nombre:</strong> Bombas Sellos y Hules Industriales SA de CV.</p>
+            <p><strong>Abreviado:</strong> BSH SA de CV.</p>
+            <p><strong>Dirección:</strong> Avenida 125 Oriente #226, Guadalupe Hidalgo, Puebla. C.P. 72494.</p>
+            <p><strong>Teléfonos:</strong></p>
+            <ul class="ml-4 list-disc space-y-1">
+                <li>(55) 5752-1715</li>
+                <li>(22) 2227-3866</li>
+                <li>(83) 3246-2205</li>
+                <li>(83) 3239-5885</li>
+            </ul>
+            <p><strong>Correo electrónico:</strong>
+                <a href="mailto:bsh@bombasellos.com.mx" class="underline hover:text-gray-300">bsh@bombasellos.com.mx</a>
+            </p>
+        </div>
+    </div>
+</div>
+
             </div>
         </section>
         
@@ -308,5 +311,7 @@
         
         @include('components.click-to-chat')
     </footer>
+  
+
 </body>
 </html>

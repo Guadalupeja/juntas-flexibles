@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Log;
+
 use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\FiltrosController;
@@ -50,4 +52,27 @@ Route::get('/pdf-basico', [PdfController::class, 'generarPDF']);
 
 Route::post('/rate-page', [RatingController::class, 'store'])->name('rate.page');
 Route::get('/get-rating/{page_id}', [RatingController::class, 'show'])->name('get.rating');
+
+// routes/web.php (bórrala luego)
+Route::get('/__whoami', fn() => ['base_path' => base_path()]);
+
+
+
+
+/* PING: responde “OK” y dice dónde está corriendo el código */
+Route::get('/whoami', function () {
+    return [
+        'base_path'   => base_path(),        // Carpeta real del proyecto en tu PC
+        'php_version' => PHP_VERSION,
+        'datetime'    => now()->toDateTimeString(),
+    ];
+});
+
+/* LOGTEST: escribe una línea en storage/logs/laravel.log */
+Route::get('/logtest', function () {
+    Log::info('LOGTEST desde '.base_path().' a las '.now());
+    return 'Log escrito';
+});
+
+
 });

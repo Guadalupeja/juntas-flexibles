@@ -26,3 +26,37 @@
   AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
 </IfModule>
 # php -- END cPanel-generated handler, do not edit
+# --- Cache por tipo MIME ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Por defecto 1 mes
+  ExpiresDefault "access plus 1 month"
+
+  # Tipos frecuentes
+  ExpiresByType text/css                       "access plus 1 year"
+  ExpiresByType application/javascript         "access plus 1 year"
+  ExpiresByType text/javascript                "access plus 1 year"
+  ExpiresByType font/woff2                     "access plus 1 year"
+  ExpiresByType image/avif                     "access plus 1 year"
+  ExpiresByType image/webp                     "access plus 1 year"
+  ExpiresByType image/jpeg                     "access plus 6 months"
+  ExpiresByType image/png                      "access plus 6 months"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # 1) Activos versionados (Vite /build con hash) -> 1 año + immutable
+  # Patrón de hash de 8+ hex en el nombre antes de la extensión
+  <FilesMatch "\.[0-9a-f]{8,}\.(css|js|woff2|avif|webp|png|jpe?g)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # 2) Otros estáticos (sin hash) -> 30 días (ajusta a tu gusto)
+  <FilesMatch "\.(css|js|woff2|avif|webp|png|jpe?g)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # 3) HTML y PHP -> TTL corto (5 minutos) para que cambios de contenido se vean rápido
+  <FilesMatch "\.(html|php)$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+</IfModule>

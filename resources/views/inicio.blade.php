@@ -25,36 +25,92 @@
   }
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "BSH – Juntas de Expansión",
+  "image": "https://www.juntasflexibles.com/img/logo-bsh-white.png.webp",
+  "url": "https://www.juntasflexibles.com",
+  "telephone": "+52-833-239-5885",
+  "email": "bsh@bombasellos.com.mx",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida 125 Oriente #226, Guadalupe Hidalgo",
+    "addressLocality": "Heroica Puebla de Zaragoza",
+    "addressRegion": "Puebla",
+    "postalCode": "72494",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.9748785,
+    "longitude": -98.2340281
+  },
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "sameAs": [
+    "https://www.facebook.com/Bombas-Sellos-y-Hules-Industriales-SA-de-CV-116434456400428",
+    "https://www.linkedin.com/company/bombas-sellos-y-hules-industriales-bsh"
+  ]
+}
+</script>
+
 @endsection
 
 @section('contenido')
 {{-- =========================================
-     HERO SECTION
+     HERO SECTION (LCP optimizado)
 ========================================= --}}
-<section
-  class="relative flex items-center justify-center min-h-[251px] bg-cover bg-center"
-  style="
-    background-image: url('img/procesadas/Junta-de-expansion-bsh-mexico-large.jpg');
-    background-image: -webkit-image-set(
-      url('img/procesadas/Junta-de-expansion-bsh-mexico-large.webp') type('image/webp'),
-      url('img/Junta-de-expansion-bsh-mexico-large.jpg') type('image/jpeg')
-    );
-    background-image: image-set(
-      url('img/procesadas/Junta-de-expansion-bsh-mexico-large.webp') type('image/webp'),
-      url('img/Junta-de-expansion-bsh-mexico-large.jpg') type('image/jpeg')
-    );
-  "
->
-  <!-- Oscurecer un poco el fondo -->
-  <div class="absolute inset-0 bg-black opacity-30"></div>
+<section class="relative flex items-center justify-center min-h-[251px] overflow-hidden bg-gray-100">
+  <picture>
+    <!-- 1) AVIF primero (más pequeño) -->
+    <source
+      type="image/avif"
+      srcset="
+        /img/procesadas/Junta-de-expansion-bsh-mexico-small.avif 480w,
+        /img/procesadas/Junta-de-expansion-bsh-mexico-medium.avif 800w,
+        /img/procesadas/Junta-de-expansion-bsh-mexico-large.avif 1200w
+      "
+      sizes="100vw"
+    />
+    <!-- 2) WebP de respaldo -->
+    <source
+      type="image/webp"
+      srcset="
+        /img/procesadas/Junta-de-expansion-bsh-mexico-small.webp 480w,
+        /img/procesadas/Junta-de-expansion-bsh-mexico-medium.webp 800w,
+        /img/procesadas/Junta-de-expansion-bsh-mexico-large.webp 1200w
+      "
+      sizes="100vw"
+    />
+    <!-- 3) JPG fallback absoluto -->
+    <img
+      src="/img/procesadas/Junta-de-expansion-bsh-mexico-medium.jpg"
+      srcset="
+        /img/procesadas/Junta-de-expansion-bsh-mexico-small.jpg 480w,
+        /img/procesadas/Junta-de-expansion-bsh-mexico-medium.jpg 800w,
+        /img/procesadas/Junta-de-expansion-bsh-mexico-large.jpg 1200w
+      "
+      sizes="100vw"
+      alt="Juntas de expansión BSH"
+      class="absolute inset-0 w-full h-full object-cover"
+      width="1200" height="675"         <!-- relación 16:9 para evitar CLS -->
+      decoding="async"
+      fetchpriority="high"
+    />
+  </picture>
 
-  <div class="container mx-auto relative z-10">
+  <!-- Superposición oscura (barata de pintar) -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- Título -->
+  <div class="container mx-auto relative z-10 px-4">
     <h1 class="text-white text-center text-3xl md:text-[52px] font-bold leading-[1.2]">
       Juntas de Expansión para conexión de tubería
     </h1>
   </div>
 </section>
-
 {{-- =========================================
      PRIMERA SECCIÓN
 ========================================= --}}
