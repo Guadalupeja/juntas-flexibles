@@ -228,5 +228,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-  //JS para mostrar rangos de temperatura: 
-  
+  //JS para optimizar lcp
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll('.lazy-bg');
+  const apply = el => {
+    const bg = el.getAttribute('data-bg');
+    if (bg) el.style.backgroundImage = bg;
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { apply(e.target); obs.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px 300px 0px' });
+    els.forEach(el => io.observe(el));
+  } else {
+    // Respaldo para navegadores viejos: sin IO, aplica de inmediato
+    els.forEach(apply);
+  }
+});

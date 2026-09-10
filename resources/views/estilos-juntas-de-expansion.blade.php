@@ -339,24 +339,24 @@
                 <source 
                     type="image/webp" 
                     srcset="
-                        {{ asset('img/procesadas/junta-de-expansión-de-arco-fluido-con-bridas-de-acero-small.webp') }} 480w,
-                        {{ asset('img/procesadas/junta-de-expansión-de-arco-fluido-con-bridas-de-acero-medium.webp') }} 800w,
-                        {{ asset('img/procesadas/junta-de-expansión-de-arco-fluido-con-bridas-de-acero-large.webp') }} 1200w"
+                        {{ asset('img/procesadas/junta-de-expansion-de-arco-fluido-con-bridas-de-acero-small.webp') }} 480w,
+                        {{ asset('img/procesadas/junta-de-expansion-de-arco-fluido-con-bridas-de-acero-medium.webp') }} 800w,
+                        {{ asset('img/procesadas/junta-de-expansion-de-arco-fluido-con-bridas-de-acero-large.webp') }} 1200w"
                     sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
                 
                 <!-- Fuente de respaldo para navegadores que no soportan WebP -->
                 <source 
                     type="image/jpeg" 
                     srcset="
-                        {{ asset('img/procesadas/junta-de-expansión-de-arco-fluido-con-bridas-de-acero-small.jpg') }} 480w,
-                        {{ asset('img/procesadas/junta-de-expansión-de-arco-fluido-con-bridas-de-acero-medium.jpg') }} 800w,
-                        {{ asset('img/procesadas/junta-de-expansión-de-arco-fluido-con-bridas-de-acero-large.jpg') }} 1200w"
+                        {{ asset('img/procesadas/junta-de-expansion-de-arco-fluido-con-bridas-de-acero-small.jpg') }} 480w,
+                        {{ asset('img/procesadas/junta-de-expansion-de-arco-fluido-con-bridas-de-acero-medium.jpg') }} 800w,
+                        {{ asset('img/procesadas/junta-de-expansion-de-arco-fluido-con-bridas-de-acero-large.jpg') }} 1200w"
                     sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
                 
                 <!-- Etiqueta img como último recurso -->
                 <img 
                   id="imagen_destacada_img"
-                    src="{{ asset('img/procesadas/junta-de-expansión-de-arco-fluido-con-bridas-de-acero-large.jpg') }}" 
+                    src="{{ asset('img/procesadas/junta-de-expansion-de-arco-fluido-con-bridas-de-acero-large.jpg') }}" 
                     alt="Imagen Junta de expansión 2210" 
                     class="mx-auto w-[370px] transition-transform duration-300 ease-in-out hover:scale-110">
             </picture>

@@ -97,24 +97,24 @@ Fabricación Express Juntas Bridadas.Todos los materiales y normas')
                 <source 
                     type="image/webp" 
                     srcset="
-                        {{ asset('img/procesadas/111e-mosaico-ok-small.webp') }} 480w,
-                        {{ asset('img/procesadas/111e-mosaico-ok-medium.webp') }} 800w,
-                        {{ asset('img/procesadas/111e-mosaico-ok-large.webp') }} 1200w"
+                        {{ asset('img/procesadas/111E-mosaico-ok-small.webp') }} 480w,
+                        {{ asset('img/procesadas/111E-mosaico-ok-medium.webp') }} 800w,
+                        {{ asset('img/procesadas/111E-mosaico-ok-large.webp') }} 1200w"
                     sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
                 
                 <!-- Fuente de respaldo para navegadores que no soportan WebP -->
                 <source 
                     type="image/jpeg" 
                     srcset="
-                        {{ asset('img/procesadas/111e-mosaico-ok-small.jpg') }} 480w,
-                        {{ asset('img/procesadas/111e-mosaico-ok-medium.jpg') }} 800w,
-                        {{ asset('img/procesadas/111e-mosaico-ok-large.jpg') }} 1200w"
+                        {{ asset('img/procesadas/111E-mosaico-ok-small.jpg') }} 480w,
+                        {{ asset('img/procesadas/111E-mosaico-ok-medium.jpg') }} 800w,
+                        {{ asset('img/procesadas/111E-mosaico-ok-large.jpg') }} 1200w"
                     sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, 1200px">
                 
                 <!-- Etiqueta img como último recurso -->
                 <img 
                   id="imagen_destacada_img"
-                    src="{{ asset('img/procesadas/111e-mosaico-ok-large.jpg') }}" 
+                    src="{{ asset('img/procesadas/111E-mosaico-ok-large.jpg') }}" 
                     alt="Imagen Junta de expansión 111E" 
                     class="mx-auto w-[300px] transition-transform duration-300 ease-in-out hover:scale-110">
             </picture>

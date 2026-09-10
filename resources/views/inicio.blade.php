@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Juntas de expansión mejor calidad amplia gama ' . date('Y') . ' cotiza')
-@section('description', 'Juntas de expansión de hules convencionales y especiales para cualquier industria ' . date('Y') . ' Cotiza aquí Fabricamos sobre especificación o diseño con la mejor calidad')
+@section('title', 'Juntas de expansión mejor calidad amplia gama 2026 cotiza')
+@section('description', 'Juntas de expansión de hules convencionales y especiales para cualquier industria 2026. Cotiza aquí Fabricamos sobre especificación o diseño con la mejor calidad')
 
 @section('structured-data')
 <script type="application/ld+json">
@@ -63,43 +63,45 @@
      HERO SECTION (LCP optimizado)
 ========================================= --}}
 <section class="relative flex items-center justify-center min-h-[251px] overflow-hidden bg-gray-100">
-  <picture>
-    <!-- 1) AVIF primero (más pequeño) -->
-    <source
-      type="image/avif"
-      srcset="
-        /img/procesadas/Junta-de-expansion-bsh-mexico-small.avif 480w,
-        /img/procesadas/Junta-de-expansion-bsh-mexico-medium.avif 800w,
-        /img/procesadas/Junta-de-expansion-bsh-mexico-large.avif 1200w
-      "
-      sizes="100vw"
-    />
-    <!-- 2) WebP de respaldo -->
-    <source
-      type="image/webp"
-      srcset="
-        /img/procesadas/Junta-de-expansion-bsh-mexico-small.webp 480w,
-        /img/procesadas/Junta-de-expansion-bsh-mexico-medium.webp 800w,
-        /img/procesadas/Junta-de-expansion-bsh-mexico-large.webp 1200w
-      "
-      sizes="100vw"
-    />
-    <!-- 3) JPG fallback absoluto -->
-    <img
-      src="/img/procesadas/Junta-de-expansion-bsh-mexico-medium.jpg"
-      srcset="
-        /img/procesadas/Junta-de-expansion-bsh-mexico-small.jpg 480w,
-        /img/procesadas/Junta-de-expansion-bsh-mexico-medium.jpg 800w,
-        /img/procesadas/Junta-de-expansion-bsh-mexico-large.jpg 1200w
-      "
-      sizes="100vw"
-      alt="Juntas de expansión BSH"
-      class="absolute inset-0 w-full h-full object-cover"
-      width="1200" height="675"         <!-- relación 16:9 para evitar CLS -->
-      decoding="async"
-      fetchpriority="high"
-    />
-  </picture>
+<picture>
+  <!-- AVIF -->
+  <source
+    type="image/avif"
+    srcset="
+      /img/procesadas/Junta-de-expansion-bsh-mexico-small.avif 480w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-720.avif   720w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-medium.avif 800w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-large.avif 1200w
+    "
+    sizes="(max-width:640px) 100vw, (max-width:1024px) 90vw, 1200px"
+  />
+  <!-- WebP -->
+  <source
+    type="image/webp"
+    srcset="
+      /img/procesadas/Junta-de-expansion-bsh-mexico-small.webp 480w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-720.webp   720w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-medium.webp 800w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-large.webp 1200w
+    "
+    sizes="(max-width:640px) 100vw, (max-width:1024px) 90vw, 1200px"
+  />
+  <!-- JPG fallback -->
+  <img
+    src="/img/procesadas/Junta-de-expansion-bsh-mexico-720.jpg"
+    srcset="
+      /img/procesadas/Junta-de-expansion-bsh-mexico-small.jpg 480w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-720.jpg   720w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-medium.jpg 800w,
+      /img/procesadas/Junta-de-expansion-bsh-mexico-large.jpg 1200w
+    "
+    sizes="(max-width:640px) 100vw, (max-width:1024px) 90vw, 1200px"
+    alt="Juntas de expansión BSH"
+    class="absolute inset-0 w-full h-full object-cover"
+    width="1200" height="675"
+    decoding="async" fetchpriority="high"
+  />
+</picture>
 
   <!-- Superposición oscura (barata de pintar) -->
   <div class="absolute inset-0 bg-black/30"></div>

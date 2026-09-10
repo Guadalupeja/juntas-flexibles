@@ -6,22 +6,38 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Juntas Flexibles BSH')</title>
+    <title>@yield('title', 'Juntas de expansión y juntas flexibles para tuberías | BSH México')</title>
     <meta name="description" content="@yield('description', 'Descripción por defecto')">
     
 <!-- Preload del LCP: solo AVIF (si no hay soporte, el navegador lo ignora y usará WebP/JPG del <picture>) -->
+<!-- PRELOAD del LCP: la variante que SÍ usa móvil -->
+<link
+  rel="preload"
+  as="image"
+  href="/img/procesadas/Junta-de-expansion-bsh-mexico-720.avif"
+  type="image/avif"
+  imagesrcset="
+    /img/procesadas/Junta-de-expansion-bsh-mexico-small.avif 480w,
+    /img/procesadas/Junta-de-expansion-bsh-mexico-720.avif   720w,
+    /img/procesadas/Junta-de-expansion-bsh-mexico-medium.avif 800w,
+    /img/procesadas/Junta-de-expansion-bsh-mexico-large.avif 1200w
+  "
+  imagesizes="(max-width:640px) 100vw, (max-width:1024px) 90vw, 1200px"
+  fetchpriority="high"
+/>
+
+<!-- (Opcional) Preload desktop -->
 <link
   rel="preload"
   as="image"
   href="/img/procesadas/Junta-de-expansion-bsh-mexico-large.avif"
   type="image/avif"
   imagesrcset="
-    /img/procesadas/Junta-de-expansion-bsh-mexico-small.avif 480w,
     /img/procesadas/Junta-de-expansion-bsh-mexico-medium.avif 800w,
     /img/procesadas/Junta-de-expansion-bsh-mexico-large.avif 1200w
   "
-  imagesizes="100vw"
-  fetchpriority="high"
+  imagesizes="(min-width:1024px) 1200px, 800px"
+  media="(min-width: 1024px)"
 />
 
 

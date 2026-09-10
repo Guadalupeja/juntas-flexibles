@@ -1,62 +1,81 @@
 <IfModule mod_rewrite.c>
+    # ------------------------------------------------------------------
+    # Seguridad / rendimiento generales
+    # ------------------------------------------------------------------
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
 
     RewriteEngine On
 
-    # Handle Authorization Header
+    # ------------------------------------------------------------------
+    # 1) Fuerza HTTPS permanente
+    # ------------------------------------------------------------------
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # ------------------------------------------------------------------
+    # 2) Encabezado HSTS (1 año)  — ¡mantén SSL siempre válido!
+    # ------------------------------------------------------------------
+    <IfModule mod_headers.c>
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    </IfModule>
+
+    # ------------------------------------------------------------------
+    # 3) Mantén Authorization header (Laravel Sanctum, etc.)
+    # ------------------------------------------------------------------
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Redirect Trailing Slashes If Not A Folder...
+    # ------------------------------------------------------------------
+    # 4) Quita barra final si no es carpeta
+    # ------------------------------------------------------------------
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # Send Requests To Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
+    # ------------------------------------------------------------------
+    # 5) Deja pasar archivos/directorios reales (incluye /build/assets/*)
+    # ------------------------------------------------------------------
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # ------------------------------------------------------------------
+    # 6) Todo lo demás a index.php
+    # ------------------------------------------------------------------
     RewriteRule ^ index.php [L]
 </IfModule>
 
-# php -- BEGIN cPanel-generated handler, do not edit
-# Set the “ea-php83” package as the default “PHP” programming language.
-<IfModule mime_module>
-  AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
-</IfModule>
-# php -- END cPanel-generated handler, do not edit
-# --- Cache por tipo MIME ---
+# ----------------------------------------------------------------------
+# PHP handler generado por cPanel (déjalo intacto)
+# ----------------------------------------------------------------------
 <IfModule mod_expires.c>
   ExpiresActive On
-  # Por defecto 1 mes
   ExpiresDefault "access plus 1 month"
-
-  # Tipos frecuentes
-  ExpiresByType text/css                       "access plus 1 year"
-  ExpiresByType application/javascript         "access plus 1 year"
-  ExpiresByType text/javascript                "access plus 1 year"
-  ExpiresByType font/woff2                     "access plus 1 year"
-  ExpiresByType image/avif                     "access plus 1 year"
-  ExpiresByType image/webp                     "access plus 1 year"
-  ExpiresByType image/jpeg                     "access plus 6 months"
-  ExpiresByType image/png                      "access plus 6 months"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
 </IfModule>
 
-<IfModule mod_headers.c>
-  # 1) Activos versionados (Vite /build con hash) -> 1 año + immutable
-  # Patrón de hash de 8+ hex en el nombre antes de la extensión
-  <FilesMatch "\.[0-9a-f]{8,}\.(css|js|woff2|avif|webp|png|jpe?g)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
+# Immutable para assets versionados (Vite /build y tus imágenes procesadas)
+<FilesMatch "\.(css|js|woff2|avif|webp|png|jpe?g)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
 
-  # 2) Otros estáticos (sin hash) -> 30 días (ajusta a tu gusto)
-  <FilesMatch "\.(css|js|woff2|avif|webp|png|jpe?g)$">
-    Header set Cache-Control "public, max-age=2592000"
-  </FilesMatch>
+# HTML con revalidación corta
+<FilesMatch "\.(html|php)$">
+  Header set Cache-Control "public, max-age=300, must-revalidate"
+</FilesMatch>
 
-  # 3) HTML y PHP -> TTL corto (5 minutos) para que cambios de contenido se vean rápido
-  <FilesMatch "\.(html|php)$">
-    Header set Cache-Control "public, max-age=300, must-revalidate"
-  </FilesMatch>
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
 </IfModule>
+# php -- END cPanel-generated handler, do not edit

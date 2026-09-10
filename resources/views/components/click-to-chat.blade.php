@@ -87,7 +87,7 @@
     <!-- Pie del widget -->
     <div class="bg-white text-center text-xs py-2 border-t text-gray-700 flex justify-center items-center gap-2">
       <span class="text-green-500">🟢 En línea</span> |
-      <a href="/aviso-de-privacidad" class="text-indigo-700 hover:underline">
+      <a href="/politica-de-privacidad" class="text-indigo-700 hover:underline">
         Política de privacidad
       </a>
     </div>
