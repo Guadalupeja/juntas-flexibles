@@ -179,8 +179,23 @@ dimensiones, normativa, intervalos de temperatura de los materiales')
 
           <input class="bg-[#5a0f0d] text-white rounded-full py-4 px-12 hover:bg-red-800 transition-colors cursor-pointer text-base" type="submit" value="Generar PDF">
       </form>
-      
+
       </div>
+
+      <x-cotiza-esta-junta
+        :modelo="$modelo"
+        :materiales="$materiales"
+        :materiales2="$materiales2"
+        :refuerzo="$refuerzo"
+        :tipos-arco="$tipos_arco"
+        :normativas-brida="$normativas_brida"
+        :material-bridas="$material_bridas"
+        :tipo-brida="$tipo_brida"
+        :temperatura-info="$temperatura_info"
+        :temperatura-info2="$temperatura_info2"
+        :resultado="array_slice($resultado, 1)"
+        :encabezados-tabla="$encabezados_tabla"
+      />
     </div>
   </div>
   

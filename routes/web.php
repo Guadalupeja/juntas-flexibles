@@ -6,6 +6,8 @@ use App\Http\Controllers\RatingController;
 use App\Http\Controllers\FiltrosController;
 use App\Http\Controllers\CotizacionController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\QuoteRequestController;
 use Spatie\ResponseCache\Middlewares\CacheResponse;
 
 // Grupo con la clase de middleware directamente:
@@ -50,4 +52,15 @@ Route::get('/pdf-basico', [PdfController::class, 'generarPDF']);
 
 Route::post('/rate-page', [RatingController::class, 'store'])->name('rate.page');
 Route::get('/get-rating/{page_id}', [RatingController::class, 'show'])->name('get.rating');
+
+// Punto 4/6 del plan JEX: "COTIZA ESTA JUNTA" — guarda la solicitud + datos comerciales
+// y notifica por correo, sin afectar el flujo actual de "Generar PDF".
+Route::post('/cotiza-esta-junta', [QuoteRequestController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('cotiza.junta');
 });
+
+// Fuera del grupo de cache de respuesta: es una llamada dinámica a la IA, no debe cachearse.
+Route::post('/asistente/chat', [ChatbotController::class, 'respond'])
+    ->middleware('throttle:20,1')
+    ->name('asistente.chat');

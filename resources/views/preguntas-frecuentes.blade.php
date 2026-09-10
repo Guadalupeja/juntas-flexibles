@@ -40,6 +40,54 @@
         "@type": "Answer",
         "text": "En BSH fabricamos juntas de Nitrilo, EPDM, Viton, Teflón y Neopreno, adaptándonos a cada necesidad industrial."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué normativas aplican a las juntas de expansión bridadas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las bridas de nuestras juntas se fabrican conforme a normas ANSI/ASME B16.5, DIN 2501/2502 o AWWA C207, según el estándar que ya use tu tubería. Dinos qué normativa manejas y fabricamos la junta compatible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre brida fija y brida loose (van stone)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La brida fija va integrada de forma permanente al cuerpo de la junta. La brida loose (o van stone) gira libremente sobre el cuello, lo que facilita alinear los barrenos durante la instalación sin tener que girar toda la junta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué significa la clase de una brida (150#, 300#, etc.)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La clase (150#, 300#, etc.) indica la presión nominal que soporta la brida a una temperatura de referencia. A mayor clase, mayor presión de trabajo admisible y, generalmente, mayor espesor y número de barrenos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre arco simple, doble y triple en una junta de expansión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El número de arcos define cuánto movimiento puede absorber la junta: un arco simple absorbe menos desplazamiento pero es más económico, mientras que doble y triple arco absorben mayor movimiento axial, lateral y angular en espacios donde no es posible instalar una junta más larga."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura una junta de expansión flexible y qué mantenimiento requiere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La vida útil depende del material, el fluido y las condiciones de operación, pero con una selección correcta e inspección visual periódica (buscando grietas, abombamientos o fugas) muchas juntas operan varios años sin problema. Recomendamos revisarlas en cada mantenimiento programado de la línea."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué datos necesito para cotizar una junta de expansión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para darte una cotización precisa necesitamos: diámetro de tubería, norma y clase de brida, largo total disponible, y el fluido y temperatura que va a manejar. Puedes darnos estos datos directamente en nuestra Herramienta de Selección."
+      }
     }
   ]
 }
@@ -153,6 +201,74 @@
                 <li><strong>Teflón (PTFE):</strong> Para aplicaciones en la industria farmacéutica y alimenticia.</li>
                 <li><strong>Neopreno:</strong> Alta resistencia mecánica y química.</li>
               </ul>
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-blue-50 transition">
+              <span class="font-semibold text-lg text-[#164ec9] group-hover:underline">❓ ¿Qué normativas aplican a las juntas de expansión bridadas?</span>
+              <span class="ml-2 text-xl transform transition-transform group-open:rotate-180 text-[#164ec9]">&#9654;</span>
+            </summary>
+            <div class="p-6 text-gray-700">
+              <p>Las bridas de nuestras juntas se fabrican conforme a normas <strong>ANSI/ASME B16.5</strong>, <strong>DIN 2501/2502</strong> o <strong>AWWA C207</strong>, según el estándar que ya use tu tubería. Dinos qué normativa manejas y fabricamos la junta compatible.</p>
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-blue-50 transition">
+              <span class="font-semibold text-lg text-[#164ec9] group-hover:underline">❓ ¿Cuál es la diferencia entre brida fija y brida loose (van stone)?</span>
+              <span class="ml-2 text-xl transform transition-transform group-open:rotate-180 text-[#164ec9]">&#9654;</span>
+            </summary>
+            <div class="p-6 text-gray-700">
+              <p class="mb-2"><strong>Brida fija:</strong> va integrada de forma permanente al cuerpo de la junta.</p>
+              <p><strong>Brida loose (van stone):</strong> gira libremente sobre el cuello, lo que facilita alinear los barrenos durante la instalación sin girar toda la junta.</p>
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-blue-50 transition">
+              <span class="font-semibold text-lg text-[#164ec9] group-hover:underline">❓ ¿Qué significa la clase de una brida (150#, 300#, etc.)?</span>
+              <span class="ml-2 text-xl transform transition-transform group-open:rotate-180 text-[#164ec9]">&#9654;</span>
+            </summary>
+            <div class="p-6 text-gray-700">
+              <p>Indica la presión nominal que soporta la brida a una temperatura de referencia. A mayor clase (150#, 300#...), mayor presión de trabajo admisible y, generalmente, mayor espesor y número de barrenos.</p>
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-blue-50 transition">
+              <span class="font-semibold text-lg text-[#164ec9] group-hover:underline">❓ ¿Qué diferencia hay entre arco simple, doble y triple?</span>
+              <span class="ml-2 text-xl transform transition-transform group-open:rotate-180 text-[#164ec9]">&#9654;</span>
+            </summary>
+            <div class="p-6 text-gray-700">
+              <p>El número de arcos define cuánto movimiento puede absorber la junta: un <strong>arco simple</strong> absorbe menos desplazamiento pero es más económico; <strong>doble</strong> y <strong>triple arco</strong> absorben mayor movimiento axial, lateral y angular donde no es posible instalar una junta más larga.</p>
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-blue-50 transition">
+              <span class="font-semibold text-lg text-[#164ec9] group-hover:underline">❓ ¿Cuánto dura una junta de expansión flexible y qué mantenimiento requiere?</span>
+              <span class="ml-2 text-xl transform transition-transform group-open:rotate-180 text-[#164ec9]">&#9654;</span>
+            </summary>
+            <div class="p-6 text-gray-700">
+              <p>Depende del material, el fluido y las condiciones de operación, pero con una selección correcta e inspección visual periódica (grietas, abombamientos, fugas) muchas juntas operan varios años sin problema. Recomendamos revisarlas en cada mantenimiento programado de la línea.</p>
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-blue-50 transition">
+              <span class="font-semibold text-lg text-[#164ec9] group-hover:underline">❓ ¿Qué datos necesito para cotizar una junta de expansión?</span>
+              <span class="ml-2 text-xl transform transition-transform group-open:rotate-180 text-[#164ec9]">&#9654;</span>
+            </summary>
+            <div class="p-6 text-gray-700">
+              <p class="mb-2">Para darte una cotización precisa necesitamos:</p>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Diámetro de tubería.</li>
+                <li>Norma y clase de brida.</li>
+                <li>Largo total disponible.</li>
+                <li>Fluido y temperatura a manejar.</li>
+              </ul>
+              <p class="mt-2">Puedes darnos estos datos directamente en nuestra <a href="{{ route('selecciona_juntas') }}" class="text-[#164ec9] font-semibold underline">Herramienta de Selección</a>.</p>
             </div>
           </details>
         </div>

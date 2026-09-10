@@ -326,6 +326,7 @@
         </section>
         
         @include('components.click-to-chat')
+        @include('components.ai-chatbot')
     </footer>
   
 
