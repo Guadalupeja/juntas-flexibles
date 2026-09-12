@@ -40,4 +40,10 @@ return [
         'model' => env('ANTHROPIC_MODEL', 'claude-haiku-4-5-20251001'),
     ],
 
+    'hubspot' => [
+        // Crea un "Private App" en HubSpot (Configuración > Integraciones > Apps privadas)
+        // con los scopes: crm.objects.contacts.read/write y crm.objects.notes.read/write.
+        'access_token' => env('HUBSPOT_ACCESS_TOKEN'),
+    ],
+
 ];

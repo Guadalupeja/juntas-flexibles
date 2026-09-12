@@ -222,22 +222,12 @@
                 </td>
                 <td width="80%">
                     @php
-                    $current_date = date('d/m/Y'); 
-                
-                    // Convertir los dos primeros dígitos de cada variable a mayúsculas
-                    $materiales_dos_digitos = strtoupper(substr($materiales, 0, 2));  // e.g., "NI" para "Nitrilo NBR"
-                    $tipo_brida_dos_digitos = strtoupper(substr($tipo_brida, 0, 2)); // e.g., "FI" para "Fijas"
-                
-                    // Combinar los primeros dos elementos de $productos_seleccionados (eliminando espacios)
-                    // asumiendo que $productos_seleccionados[0] = "72" y [1] = "21"
-                    $first = $productos_seleccionados[0] ?? '';
-                    $second = $productos_seleccionados[1] ?? '';
-                    $output = str_replace(' ', '', $first) . str_replace(' ', '', $second);
-                
-                    // Crear el número de parte con los dos primeros dígitos de $materiales y $tipo_brida
-                    $numero_parte = $modelo . '/' . $output . '/' . $materiales_dos_digitos . '/' . $tipo_brida_dos_digitos;
+                    // El número de parte ya viene calculado por
+                    // CotizacionController::generarCotizacion() (única fuente de
+                    // verdad); aquí solo se imprime, no se recalcula.
+                    $current_date = date('d/m/Y');
                 @endphp
-                
+
                 Fecha de elaboración: {{ $current_date }}<br>
                 Número de parte: {{ $numero_parte }}<br><br>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\NuevaSolicitudCotizacion;
 use App\Models\QuoteRequest;
+use App\Services\HubspotLeadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -59,6 +60,10 @@ class QuoteRequestController extends Controller
                 Log::warning('No se pudo enviar la notificación de nueva cotización: ' . $e->getMessage());
             }
         }
+
+        // Registrar el lead en HubSpot (contacto + nota) para las campañas de mailing
+        // semanales de seguimiento. Si HUBSPOT_ACCESS_TOKEN no está configurado, no hace nada.
+        app(HubspotLeadService::class)->registrarSolicitud($quoteRequest);
 
         return response()->json([
             'ok' => true,

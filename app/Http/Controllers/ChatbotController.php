@@ -72,6 +72,8 @@ class ChatbotController extends Controller
                 ->pluck('text')
                 ->implode("\n");
 
+            $reply = $reply !== '' ? $this->limpiarMarkdown($reply) : $reply;
+
             return response()->json([
                 'reply' => $reply !== '' ? $reply : 'No estoy segura de haber entendido tu pregunta, ¿puedes reformularla?',
             ]);
@@ -83,6 +85,24 @@ class ChatbotController extends Controller
                 'reply' => 'Tuvimos un problema técnico. Intenta de nuevo en un momento, o usa la Herramienta de Selección directamente.',
             ], 200);
         }
+    }
+
+    /**
+     * El widget del chat (ai-chatbot.blade.php) muestra la respuesta como texto
+     * plano (x-text de Alpine.js), no interpreta Markdown. Aunque ya se le pide
+     * al modelo que no use Markdown, esto quita negritas/cursivas de sobra por
+     * si el modelo las agrega de todas formas, para que no aparezcan asteriscos
+     * sueltos en la conversación.
+     */
+    private function limpiarMarkdown(string $texto): string
+    {
+        // **negrita** o __negrita__ -> negrita
+        $texto = preg_replace('/\*\*(.+?)\*\*/s', '$1', $texto);
+        $texto = preg_replace('/__(.+?)__/s', '$1', $texto);
+        // *cursiva* -> cursiva (evita tocar un asterisco suelto que no forme par)
+        $texto = preg_replace('/(?<!\*)\*([^\*\n]+?)\*(?!\*)/s', '$1', $texto);
+
+        return $texto;
     }
 
     private function systemPrompt(): string
@@ -107,6 +127,8 @@ Páginas del sitio a las que puedes dirigir al visitante (usa rutas relativas, e
 - El botón/enlace de WhatsApp del propio sitio, para hablar con un asesor humano si el tema es complejo, requiere trato personalizado, o el visitante lo pide explícitamente.
 
 Estilo: respuestas breves (2-4 líneas), claras, en español de México, profesionales pero cercanas. Termina la mayoría de tus respuestas invitando a usar la Herramienta de Selección o a compartir los datos necesarios para cotizar, según qué tan avanzada esté la conversación. Nunca inventes precios, plazos de entrega ni promesas comerciales que no tengas.
+
+Formato: escribe siempre en texto plano, sin Markdown. No uses asteriscos para negritas o cursivas, ni # para títulos, ni tablas. Si necesitas enumerar algo (por ejemplo los datos que necesitas para cotizar), usa un guion simple "-" al inicio de línea, nunca "**" ni numeración con formato especial.
 PROMPT;
     }
 }

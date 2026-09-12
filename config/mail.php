@@ -47,6 +47,18 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+            // En Windows, el PHP local muchas veces no trae configurado un bundle de
+            // certificados CA y falla la verificación SSL al conectar con Gmail
+            // ("certificate verify failed"). Se desactiva SOLO cuando APP_ENV=local;
+            // en el servidor de producción (APP_ENV=production) se mantiene la
+            // verificación normal, como debe ser.
+            'stream' => env('APP_ENV') === 'local' ? [
+                'ssl' => [
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true,
+                ],
+            ] : [],
         ],
 
         'ses' => [

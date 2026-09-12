@@ -230,9 +230,12 @@
         </div>
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="#contacto" class="inline-block text-center text-white bg-primaryRed rounded-full px-8 py-3 font-roboto font-medium transition duration-300 ease-in-out hover:bg-red-700">
           Cotiza ahora mismo
+        </a>
+        <a href="{{ route('selecciona_juntas') }}" class="inline-block text-center text-primaryRed bg-white border-2 border-primaryRed rounded-full px-8 py-3 font-roboto font-medium transition duration-300 ease-in-out hover:bg-primaryRed hover:text-white">
+          Seleccionar junta
         </a>
       </div>
     </section>
