@@ -121,7 +121,7 @@
     <!-- Texto principal -->
     <section class="w-full md:w-1/2 justify-center p-5">
       <h2 id="section1" class="encabezado mt-10 text-primaryBlue">¿Qué es una junta de expansión, para qué sirve?</h2>
-      <p class="text-[16px] text-primaryGray text-justify leading-[27px] lg:mt-5">
+      <p class="text-[16px] text-primaryGray text-justify leading-[27px] lg:mt-5 font-sans">
         Las juntas flexibles o juntas de expansión son dispositivos de ingeniería diseñados para facilitar 
         la conexión entre dos componentes o estructuras, permitiendo el movimiento relativo y 
         la adaptación a cambios de posición, ángulo o vibraciones. <br><br>
