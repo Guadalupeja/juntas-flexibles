@@ -44,9 +44,9 @@
     <!-- Optimized Google Fonts: se usa solo la versión moderna con preload y media="print" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     </noscript>
 
     <!-- AlpineJS se carga de forma deferida -->
@@ -90,7 +90,10 @@
             <div class="w-1/5 min-h-0 flex">
                 <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
-                        <i class="fa-solid fa-envelope text-gray-400"></i>
+                        <svg class="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 6.75A2.25 2.25 0 0 1 5.25 4.5h13.5A2.25 2.25 0 0 1 21 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 17.25V6.75Z"/>
+    <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 6 7.1 5.33a1.9 1.9 0 0 0 2.3 0L20.25 6"/>
+</svg>
                         <div class="pl-1">
                             <a href="mailto:bsh@bombasellos.com.mx" class="text-gray-400 hover:text-gray-600 transition duration-300 ease-in-out">bsh@bombasellos.com.mx</a>
                         </div>
@@ -101,7 +104,9 @@
             <div class="w-1/6">
                 <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
-                        <i class="fa-solid fa-phone text-gray-400"></i>
+                        <svg class="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6.6 2.75 9.3 7.5 7.8 9.1a15.2 15.2 0 0 0 7.1 7.1l1.6-1.5 4.75 2.7c.35.2.55.6.48 1-.35 2-2.1 3.1-4.1 2.85C9.75 20.3 3.7 14.25 2.75 6.37 2.5 4.37 3.6 2.62 5.6 2.27c.4-.07.8.13 1 .48Z"/>
+</svg>
                         <div class="pl-1">
                             <a href="tel:+525557521715" class="text-gray-400 hover:text-gray-600 transition duration-300 ease-in-out">55 575 21715</a>
                         </div>
@@ -112,7 +117,9 @@
             <div class="w-1/6">
                 <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
-                        <i class="fa-solid fa-phone text-gray-400"></i>
+                        <svg class="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6.6 2.75 9.3 7.5 7.8 9.1a15.2 15.2 0 0 0 7.1 7.1l1.6-1.5 4.75 2.7c.35.2.55.6.48 1-.35 2-2.1 3.1-4.1 2.85C9.75 20.3 3.7 14.25 2.75 6.37 2.5 4.37 3.6 2.62 5.6 2.27c.4-.07.8.13 1 .48Z"/>
+</svg>
                         <div class="pl-1">
                             <a href="tel:+52222273866" class="text-gray-400 hover:text-gray-600 transition duration-300 ease-in-out">222 227 3866</a>
                         </div>
@@ -123,7 +130,9 @@
             <div class="w-1/6">
                 <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
-                        <i class="fa-brands fa-whatsapp text-gray-400"></i>
+                        <svg class="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12.04 2a9.84 9.84 0 0 0-8.42 14.93L2 22l5.22-1.57A9.96 9.96 0 1 0 12.04 2Zm0 17.98a8 8 0 0 1-4.08-1.12l-.29-.17-3.1.93.96-3.02-.19-.31a7.9 7.9 0 1 1 6.7 3.69Zm4.34-5.92c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28Z"/>
+</svg>
                         <div class="pl-1">
                             <a href="https://api.whatsapp.com/send?phone=5218332395885&amp;text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20" class="text-gray-400 hover:text-gray-600 transition duration-300 ease-in-out">833 239 5885</a>
                         </div>
@@ -134,7 +143,9 @@
             <div class="w-1/6">
                 <div class="p-4 flex">
                     <div class="transition-all duration-300 ease-in-out flex items-center">
-                        <i class="fa-brands fa-whatsapp text-gray-400"></i>
+                        <svg class="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12.04 2a9.84 9.84 0 0 0-8.42 14.93L2 22l5.22-1.57A9.96 9.96 0 1 0 12.04 2Zm0 17.98a8 8 0 0 1-4.08-1.12l-.29-.17-3.1.93.96-3.02-.19-.31a7.9 7.9 0 1 1 6.7 3.69Zm4.34-5.92c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28Z"/>
+</svg>
                         <div class="pl-1">
                             <a href="https://api.whatsapp.com/send?phone=5218332462205&amp;text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20" class="text-gray-400 hover:text-gray-600 transition duration-300 ease-in-out">833 2462205</a>
                         </div>
@@ -147,11 +158,15 @@
                     <div class="transition-all duration-300 ease-in-out flex items-center">
                         <a href="https://www.facebook.com/Bombas-Sellos-y-Hules-Industriales-SA-de-CV-116434456400428" target="_blank" class="inline-flex items-center justify-center text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out no-underline ml-4">
                             <span class="sr-only">Facebook</span>
-                            <i class="fa-brands fa-facebook text-[25px]"></i>
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M13.5 22v-9h3l.45-3.5H13.5V7.26c0-1.01.28-1.7 1.74-1.7H17.1V2.43c-.32-.04-1.43-.13-2.72-.13-2.7 0-4.55 1.65-4.55 4.68V9.5H6.78V13h3.05v9h3.67Z"/>
+</svg>
                         </a>
                         <a href="https://www.linkedin.com/company/bombas-sellos-y-hules-industriales-bsh" target="_blank" class="inline-flex items-center justify-center text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out no-underline ml-4">
                             <span class="sr-only">LinkedIn</span>
-                            <i class="fa-brands fa-linkedin text-[25px]"></i>
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M5.34 7.34H2.16V21h3.18V7.34ZM3.75 2A1.84 1.84 0 1 0 3.75 5.68 1.84 1.84 0 0 0 3.75 2ZM21.84 12.67c0-4.11-2.19-6.02-5.12-6.02-2.36 0-3.42 1.3-4.01 2.21V7.34H9.53V21h3.18v-6.77c0-1.78.34-3.5 2.54-3.5 2.17 0 2.2 2.03 2.2 3.62V21h3.18l1.21-8.33Z"/>
+</svg>
                         </a>
                     </div>
                 </div>
@@ -228,11 +243,15 @@
                         <div class="flex justify-center">
                             <a href="https://www.facebook.com/Bombas-Sellos-y-Hules-Industriales-SA-de-CV-116434456400428" target="_blank" class="inline-flex items-center justify-center text-gray-400 hover:text-gray-600 transition duration-300 ease-in-out no-underline ml-4">
                                 <span class="sr-only">Facebook</span>
-                                <i class="fa-brands fa-facebook text-gray-400 text-3xl"></i>
+                                <svg class="w-7 h-7 text-gray-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M13.5 22v-9h3l.45-3.5H13.5V7.26c0-1.01.28-1.7 1.74-1.7H17.1V2.43c-.32-.04-1.43-.13-2.72-.13-2.7 0-4.55 1.65-4.55 4.68V9.5H6.78V13h3.05v9h3.67Z"/>
+</svg>
                             </a>
                             <a href="https://www.linkedin.com/company/bombas-sellos-y-hules-industriales-bsh" target="_blank" class="inline-flex items-center justify-center text-gray-400 hover:text-gray-600 transition duration-300 ease-in-out no-underline ml-4">
                                 <span class="sr-only">Linkedin-square</span>
-                                <i class="fa-brands fa-linkedin text-gray-400 text-3xl"></i>
+                                <svg class="w-7 h-7 text-gray-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M5.34 7.34H2.16V21h3.18V7.34ZM3.75 2A1.84 1.84 0 1 0 3.75 5.68 1.84 1.84 0 0 0 3.75 2ZM21.84 12.67c0-4.11-2.19-6.02-5.12-6.02-2.36 0-3.42 1.3-4.01 2.21V7.34H9.53V21h3.18v-6.77c0-1.78.34-3.5 2.54-3.5 2.17 0 2.2 2.03 2.2 3.62V21h3.18l1.21-8.33Z"/>
+</svg>
                             </a>
                         </div>
                     </div>
@@ -244,7 +263,9 @@
                     </div>
                     <div class="p-4">
                         <button id="toggle-sitemap" type="button" class="block md:hidden text-white" aria-label="Toggle sitemap">
-                            <i class="fas fa-bars"></i>
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+</svg>
                         </button>
                         <div id="sitemap-items" class="hidden md:block">
                             <ul class="text-white">
