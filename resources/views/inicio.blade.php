@@ -133,13 +133,15 @@
       <p class="text-[16px] text-primaryGray text-justify leading-[27px] lg:mt-5 font-sans">
         Las juntas flexibles o juntas de expansión son dispositivos de ingeniería diseñados para facilitar 
         la conexión entre dos componentes o estructuras, permitiendo el movimiento relativo y 
-        la adaptación a cambios de posición, ángulo o vibraciones. <br><br>
+        la adaptación a cambios de posición, ángulo o vibraciones.
+        <span class="hidden sm:inline"><br><br>
 
         A diferencia de las juntas convencionales, las juntas flexibles no solo brindan una conexión
         mecánica sólida, sino que también se caracterizan por su capacidad para absorber y 
         redistribuir las fuerzas y tensiones que actúan sobre ellas. <br><br>
 
         Las juntas de expansión son un componente esencial de la instalación hidráulica de cualquier industria.
+        </span>
       </p>
 
       <h2 id="section2" class="encabezado mt-10 text-primaryBlue">
