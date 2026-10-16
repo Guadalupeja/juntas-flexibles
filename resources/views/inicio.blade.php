@@ -59,6 +59,15 @@
 @endsection
 
 @section('contenido')
+
+<style>
+@supports (content-visibility: auto) {
+    .cv-below-fold {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 1000px;
+    }
+}
+</style>
 {{-- =========================================
      HERO SECTION (LCP optimizado)
 ========================================= --}}
@@ -246,7 +255,7 @@
      SEGUNDA SECCIÓN
 ========================================= --}}
 <section
-  class="bg-cover bg-center bg-no-repeat flex items-center justify-center text-white font-roboto"
+  class="cv-below-fold bg-cover bg-center bg-no-repeat flex items-center justify-center text-white font-roboto"
   style="
     background-image: url('img/procesadas/bombas-industriales-large.jpg');
     background-image: -webkit-image-set(
@@ -307,7 +316,7 @@
      SECCIÓN TABS: MATERIALES
 ========================================= --}}
 <section id="materiales"
-  class="relative bg-cover bg-center bg-no-repeat font-roboto"
+  class="cv-below-fold relative bg-cover bg-center bg-no-repeat font-roboto"
   style="background-image: url('img/Junta-de-expansion-bsh-mexico.jpg');"
 >
   <!-- Filtro blanco semitransparente -->
@@ -433,7 +442,7 @@
 {{-- =========================================
      SECCIÓN MOVIMIENTOS
 ========================================= --}}
-<section id="movimientos" class="bg-gray-100 flex justify-center font-roboto text-primaryGray text-justify">
+<section id="movimientos" class="cv-below-fold bg-gray-100 flex justify-center font-roboto text-primaryGray text-justify">
   <div class="w-[1140px] flex flex-col items-start">
     <h2 class="encabezado mt-10 text-primaryBlue">
       ¿Qué movimientos soportan las Juntas de Expansión BSH?
@@ -454,7 +463,7 @@
 {{-- =========================================
      EJEMPLOS DE MOVIMIENTOS (IMÁGENES)
 ========================================= --}}
-<section class="flex justify-center font-roboto text-primaryGray text-justify">
+<section class="cv-below-fold flex justify-center font-roboto text-primaryGray text-justify">
   <div class="w-[1140px] md:flex justify-center">
     {{-- FJ1 --}}
     <section class="p-1 text-primaryGray mx-3">
@@ -553,7 +562,7 @@
 {{-- =========================================
      MOVIMIENTOS 3 Y 4
 ========================================= --}}
-<section class="bg-gray-100 flex justify-center font-roboto text-primaryGray text-justify">
+<section class="cv-below-fold bg-gray-100 flex justify-center font-roboto text-primaryGray text-justify">
   <div class="w-[1140px] md:flex justify-center">
     {{-- FJ3 --}}
     <section class="p-1 text-primaryGray mx-3">
@@ -654,7 +663,7 @@
 {{-- =========================================
      MOVIMIENTOS 5 Y 6
 ========================================= --}}
-<section class="flex justify-center font-roboto text-primaryGray text-justify">
+<section class="cv-below-fold flex justify-center font-roboto text-primaryGray text-justify">
   <div class="w-[1140px] md:flex justify-center">
     {{-- FJ5 --}}
     <section class="p-1 text-primaryGray mx-3">
@@ -753,7 +762,7 @@
 {{-- =========================================
      LLAMADO A VER ESTILOS
 ========================================= --}}
-<section class="flex justify-center items-center min-h-[318px] max-w-[1097px] mx-auto p-6 bg-white shadow-md rounded font-roboto">
+<section class="cv-below-fold flex justify-center items-center min-h-[318px] max-w-[1097px] mx-auto p-6 bg-white shadow-md rounded font-roboto">
   <div id="section6" class="w-full text-center">
     <h2 class="text-2xl font-bold text-primaryBlue leading-7">
       ¿Qué estilos tienen las juntas de expansión BSH?
@@ -782,7 +791,7 @@
      SECCIÓN CONTACTO
 ========================================= --}}
 <section
-  class="w-full flex bg-cover bg-center bg-no-repeat items-center justify-center text-white font-roboto"
+  class="cv-below-fold w-full flex bg-cover bg-center bg-no-repeat items-center justify-center text-white font-roboto"
   style="
     background-image: url('img/procesadas/bombas-industriales-large.jpg');
     background-image: -webkit-image-set(
