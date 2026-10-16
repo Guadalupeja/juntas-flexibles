@@ -99,7 +99,7 @@
     alt="Juntas de expansión BSH"
     class="absolute inset-0 w-full h-full object-cover"
     width="1200" height="675"
-    decoding="async" fetchpriority="high"
+    fetchpriority="high"
   />
 </picture>
 
