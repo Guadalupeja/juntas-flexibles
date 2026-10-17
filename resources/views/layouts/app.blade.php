@@ -53,7 +53,26 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Vite assets: CSS y JS minificados en producción -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- EXPERIMENTO LCP: mismo CSS compilado, inline para eliminar la petición render-blocking --}}
+    @php
+        $viteManifestPath = public_path('build/manifest.json');
+        $viteManifest = is_file($viteManifestPath)
+            ? json_decode(file_get_contents($viteManifestPath), true)
+            : [];
+
+        $inlineAppCssFile = $viteManifest['resources/css/app.css']['file'] ?? null;
+        $inlineAppCssPath = $inlineAppCssFile
+            ? public_path('build/' . $inlineAppCssFile)
+            : null;
+    @endphp
+
+    @if ($inlineAppCssPath && is_file($inlineAppCssPath))
+        <style data-inline-app-css>{!! file_get_contents($inlineAppCssPath) !!}</style>
+    @else
+        @vite('resources/css/app.css')
+    @endif
+
+    @vite('resources/js/app.js')
 
     <!-- Google Tag Manager: carga normal para evitar bloqueos -->
 <!-- Sustituye tu loader diferido por esto en <head> -->
