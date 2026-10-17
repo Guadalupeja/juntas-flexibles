@@ -4,6 +4,11 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/css/home-critical.generated.css": {
+    "file": "assets/home-critical-BLylMhVE.css",
+    "src": "resources/css/home-critical.generated.css",
+    "isEntry": true
+  },
   "resources/js/app.js": {
     "file": "assets/app-CPEgVJCS.js",
     "name": "app",

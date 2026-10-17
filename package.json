@@ -2,8 +2,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "build:critical": "node scripts/build-home-critical.mjs",
+        "build": "npm run build:critical && vite build",
+        "dev": "npm run build:critical && vite"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",

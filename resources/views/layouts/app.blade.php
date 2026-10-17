@@ -53,7 +53,34 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Vite assets: CSS y JS minificados en producción -->
+    {{-- HOME LCP: critical CSS embebido + stylesheet completo no bloqueante --}}
+@php
+    $isHomeCriticalCss = request()->routeIs('inicio')
+        && ! \Illuminate\Support\Facades\Vite::isRunningHot();
+@endphp
+
+@if ($isHomeCriticalCss)
+    <style data-home-critical-css>{!! \Illuminate\Support\Facades\Vite::content('resources/css/home-critical.generated.css') !!}</style>
+
+    <link
+        rel="stylesheet"
+        href="{{ \Illuminate\Support\Facades\Vite::asset('resources/css/app.css') }}"
+        media="print"
+        onload="this.onload=null;this.media='all'"
+        data-deferred-app-css
+    >
+
+    <noscript>
+        <link
+            rel="stylesheet"
+            href="{{ \Illuminate\Support\Facades\Vite::asset('resources/css/app.css') }}"
+        >
+    </noscript>
+
+    @vite('resources/js/app.js')
+@else
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+@endif
 
     <!-- Google Tag Manager: carga normal para evitar bloqueos -->
 <!-- Sustituye tu loader diferido por esto en <head> -->
