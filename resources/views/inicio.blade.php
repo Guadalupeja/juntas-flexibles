@@ -66,6 +66,13 @@
         content-visibility: auto;
         contain-intrinsic-size: auto 1000px;
     }
+
+    @media (max-width: 767px) {
+        .cv-mobile-defer {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 700px;
+        }
+    }
 }
 </style>
 {{-- =========================================
@@ -142,6 +149,7 @@
         Las juntas de expansión son un componente esencial de la instalación hidráulica de cualquier industria.
       </p>
 
+      <div class="cv-mobile-defer">
       <h2 id="section2" class="encabezado mt-10 text-primaryBlue">
         El acoplamiento de la junta de expansión permite a las tuberías:
       </h2>
@@ -156,10 +164,11 @@
       <p class="text-[16px] text-primaryGray text-justify leading-[27px] lg:mt-5 font-bold">
         BSH dispone del rango más amplio de configuraciones, modelos y materiales, para cualquier tipo de aplicación.
       </p>
+      </div>
     </section>
 
     <!-- Tabla de Contenido y llamada a la acción -->
-    <section class="w-full md:w-1/2">
+    <section class="cv-mobile-defer w-full md:w-1/2">
       <div class="container mx-auto px-8 py-8">
         <h2 class="text-3xl font-bold mb-6 text-primaryBlue border-b-2 border-[#610001] pb-2 mt-10">
           Tabla de Contenido
