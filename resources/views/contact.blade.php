@@ -90,7 +90,7 @@ lg:grid-cols-2    /* A partir de lg: 2 columnas */"
                 <span class="font-bold">Matriz</span>
               </p>
               <p class="mb-[1.75em]">
-                Limón #1404, Ampliación Monte Alto, Altamira, Tamaulipas, C.P. 89606.<br>
+                Prolongación 1ero de Mayo No. 1914, Colonia Loma del Gallo, C.P. 89460, Ciudad Madero, Tamaulipas, México.<br>
                 Tel: (0183) 3375-3249<br>
                 bsh@bombasellos.com.mx
               </p>

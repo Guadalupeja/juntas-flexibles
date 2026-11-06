@@ -121,8 +121,8 @@
                     </td>
                     <td>
                         <ul>
-                            <li>Calle Limón No. 1404, Ampliación</li>
-                            <li>Monte Alto Altamira Tamaulipas.</li>
+                            <li>Prolongación 1ero de Mayo No. 1914, Colonia Loma del Gallo,</li>
+                            <li>C.P. 89460, Ciudad Madero, Tamaulipas, México.</li>
                             <li>E-mail: bsh@bombasellos.com.mx</li>
                             <li>RFC: BSH100430862</li>
                             <li>T. 55-5752-1715</li>
