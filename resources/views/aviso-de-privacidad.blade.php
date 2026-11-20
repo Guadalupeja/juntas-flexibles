@@ -43,7 +43,7 @@
         <div class="column">
           <p class="mb-[1.6em]"><strong>RESPONSABLE DE LA PROTECCIÓN DE SUS DATOS PERSONALES.</strong></p>
           <p class="mb-[1.6em]">
-            En cumplimiento a lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en adelante la Ley), hacemos de su conocimiento el presente Aviso de Privacidad de Bombas Sellos y Hules Industriales S.A. de C.V. con domicilio en Limón 1404, Colonia Ampliación Monte Alto, Altamira,Tamaulipas, C.P.: 89606. Quien es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
+            En cumplimiento a lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en adelante la Ley), hacemos de su conocimiento el presente Aviso de Privacidad de Bombas Sellos y Hules Industriales S.A. de C.V. con domicilio en Prolongación 1ero de Mayo No. 1914, Colonia Loma del Gallo, C.P. 89460, Ciudad Madero, Tamaulipas, México. Quien es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
           </p>
           <p class="mb-[1.6em]"><strong>¿QUÉ DATOS PERSONALES OBTENEMOS Y CÓMO?</strong></p>
           <p class="mb-[1.6em]">
@@ -92,7 +92,7 @@
         <div class="column">
           <p class="mb-[1.6em]">
             <strong>BOMBAS SELLOS Y HULES INDUSTRIALES SA DE CV</strong><br>
-            Limón 1404, Altamira, Altamira, Tamaulipas, México. C.P. 89606 Tel.: (01 55) 5752-1715 / (01 833) 375-3249&nbsp;bsh@bombasellos.com.mx<br>
+            Prolongación 1ero de Mayo No. 1914, Colonia Loma del Gallo, C.P. 89460, Ciudad Madero, Tamaulipas, México Tel.: (01 55) 5752-1715 / (01 833) 375-3249&nbsp;bsh@bombasellos.com.mx<br>
             www.bombasellos.com.mx
           </p>
           <p class="mb-[1.6em]">En el caso de proveedores, su información personal será utilizada para:</p>
@@ -140,7 +140,7 @@
         <div class="column">
           <p class="mb-[1.6em]">
             <strong>BOMBAS SELLOS Y HULES INDUSTRIALES SA DE CV</strong><br>
-            Limón 1404, Altamira, Altamira, Tamaulipas, México. C.P. 89606 Tel.: (01 55) 5752-1715 / (01 833) 375-3249&nbsp;bsh@bombasellos.com.mx<br>
+            Prolongación 1ero de Mayo No. 1914, Colonia Loma del Gallo, C.P. 89460, Ciudad Madero, Tamaulipas, México Tel.: (01 55) 5752-1715 / (01 833) 375-3249&nbsp;bsh@bombasellos.com.mx<br>
             www.bombasellos.com.mx
           </p>
           <p class="mb-[1.6em]">En el caso de solicitudes de rectificación de datos personales, deberá indicar, además de lo señalado anteriormente, las modificaciones a realizarse y aportar la documentación que sustente su petición.</p>
@@ -206,7 +206,7 @@
         <div class="column">
           <p class="mb-[1.6em]">
             BOMBAS SELLOS Y HULES INDUSTRIALES SA DE CV<br>
-            Limón 1404, Altamira, Altamira, Tamaulipas, México. C.P. 89606 Tel.: (01 55) 5752-1715 / (01 833) 375-3249&nbsp;bsh@bombasellos.com.mx<br>
+            Prolongación 1ero de Mayo No. 1914, Colonia Loma del Gallo, C.P. 89460, Ciudad Madero, Tamaulipas, México Tel.: (01 55) 5752-1715 / (01 833) 375-3249&nbsp;bsh@bombasellos.com.mx<br>
             www.bombasellos.com.mx
           </p>
           <p class="mb-[1.6em]">
