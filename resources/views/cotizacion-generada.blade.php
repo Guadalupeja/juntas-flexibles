@@ -108,9 +108,62 @@
         .footer img {
             width: 100px;
         }
-    </style>
+
+/* Fichas extensas: dimensiones compactas */
+body.ficha-extensa .encabezado li {
+    font-size: 11px;
+    line-height: 12px;
+}
+body.ficha-extensa .encabezado ul {
+    margin-bottom: 2px;
+}
+body.ficha-extensa .seccion_2 p {
+    font-size: 12px;
+    line-height: 14px;
+    margin: 4px 0;
+}
+body.ficha-extensa .seccion_3 h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+body.ficha-extensa .seccion_3 li {
+    font-size: 11.5px;
+    line-height: 14px;
+}
+body.ficha-extensa .seccion_3 .diagrama-pdf {
+    width: 290px;
+}
+body.ficha-extensa .seccion_4 h3 {
+    margin: 4px 0 6px;
+}
+body.ficha-extensa .seccion_4 li {
+    font-size: 11.5px;
+    line-height: 13px;
+}
+body.ficha-extensa .seccion_4 img {
+    width: 190px;
+}
+body.ficha-extensa .rangos li {
+    font-size: 11.5px;
+    line-height: 14px;
+}
+body.ficha-extensa .footer {
+    font-size: 10.5px;
+    line-height: 13px;
+}
+body.ficha-extensa .footer img {
+    width: 85px;
+}
+.footer {
+    page-break-inside: avoid;
+}
+        /* Separacion entre titulo y galeria de movimientos */
+        body.ficha-extensa .seccion_3 .galeriaPDF > div {
+            padding-top: 18px;
+        }
+</style>
 </head>
-<body>
+<body class="{{ count($encabezados_tabla) > 8 ? 'ficha-extensa' : '' }}">
     <header>
         <div class="encabezado">
             <table width="100%">
@@ -231,7 +284,7 @@
                 Fecha de elaboración: {{ $current_date }}<br>
                 Número de parte: {{ $numero_parte }}<br><br>
 
-                    Esta Ficha Técnica es un instrumento informativo; 
+                    Esta Ficha Técnica es un instrumento informativo;
                     Las configuraciones y rangos operativos reales podrían variar acorde a otras especificaciones del cliente para la fabricación,
                     así como particularidades de su aplicación, instalación, proceso.
                 </td>
